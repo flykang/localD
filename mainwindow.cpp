@@ -21,7 +21,7 @@ void MainWindow::on_searchEdit_cursorPositionChanged()
 
 
      boost::regex re("^select ([a-zA-Z]*) from ([a-zA-Z]*)");
-     Poppler::Document* document = Poppler::Document::load("/home/ubunut/test/c-api.pdf");
+     Poppler::Document* document = Poppler::Document::load("/home/zk/c-api.pdf");
      if (!document || document->isLocked()) {
        delete document;
        return;
@@ -34,7 +34,19 @@ void MainWindow::on_searchEdit_cursorPositionChanged()
          QString text = document->page(page)->text(*recf);
          ui->textBrowser->append(text);
          page++;
+
      }
+
+
+     //ui->textBrowser->verticalScrollBar(0);
+     QTextCursor cursor = ui->textBrowser->textCursor();
+     cursor.setPosition(8000);
+     ui->textBrowser->setTextCursor(cursor);
+
+    // curso.setPosition(100,QTextCursor::KeepAnchor);
+     //curso.movePosition(QTextCursor::End);
+    // ui->textBrowser->setTextCursor(curso);
+    // setFocus();
     // QString text = document->page(20)->text(*recf);
      //ui->textBrowser->append(text);
 

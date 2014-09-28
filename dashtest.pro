@@ -25,12 +25,12 @@ HEADERS  += mainwindow.h \
 
 INCLUDEPATH +=/usr/include/python2.7/ \
             /usr/include/boost/ \
-            /usr/include/poppler/qt5
+            /usr/include/poppler/qt4
 
 
 LIBS += -lboost_python \
         -lboost_regex\
-        -L/usr/lib -lpoppler-qt5
+        -L/usr/lib -lpoppler-qt4
 FORMS    += mainwindow.ui
 
 CONFIG += c++11
