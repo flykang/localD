@@ -24,11 +24,13 @@ HEADERS  += mainwindow.h \
     searcher.h
 
 INCLUDEPATH +=/usr/include/python2.7/ \
-            /usr/include/boost/
+            /usr/include/boost/ \
+            /usr/include/poppler/qt5
 
 
 LIBS += -lboost_python \
-        -lboost_regex
+        -lboost_regex\
+        -L/usr/lib -lpoppler-qt5
 FORMS    += mainwindow.ui
 
 CONFIG += c++11

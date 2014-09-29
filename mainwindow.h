@@ -8,6 +8,7 @@
 #include <QDebug>
 #include <QString>
 #include <boost/regex.hpp>
+#include <poppler/qt5/poppler-qt5.h>
 
 namespace Ui {
 class MainWindow;
