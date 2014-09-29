@@ -28,8 +28,15 @@ void MainWindow::on_searchEdit_cursorPositionChanged()
      }
 
      QRectF *recf = new QRectF();
-     QString text = document->page(20)->text(*recf);
-     ui->textBrowser->append(text);
+
+     int page = 0;
+     while(page < document->numPages()){
+         QString text = document->page(page)->text(*recf);
+         ui->textBrowser->append(text);
+         page++;
+     }
+    // QString text = document->page(20)->text(*recf);
+     //ui->textBrowser->append(text);
 
      //QFile file("/home/ubunut/test/c-api.pdf");
   /*   if(!file.open(QIODevice::ReadOnly | QIODevice::Text)){
